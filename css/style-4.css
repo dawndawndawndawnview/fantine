@@ -513,10 +513,10 @@ header {
 nav {
     /* display: block; */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    flex: 2;
+    /* flex: 2; */
     /* position: absolute; */
     /* top: 25vh; */
     /* left: 0; */
@@ -561,7 +561,7 @@ nav div:hover {
     background-size: contain;
 }
 
-.pic {
+.album {
     display: flex;
     flex: 10;
     width: 100%;
@@ -576,9 +576,6 @@ nav div:hover {
     background-color: #77a6a1;
 }
 
-.album {
-    width: 100%;
-}
 
 .title-container {
     width: 20vh;
@@ -644,7 +641,11 @@ nav div:hover {
 }
 
 @media screen and (max-width:768px) {
-    .pic {
+    .album {
+        display: none;
+    }
+
+    nav{
         display: none;
     }
 }

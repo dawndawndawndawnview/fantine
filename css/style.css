@@ -560,7 +560,7 @@ nav div:hover {
     background-size: contain;
 }
 
-.pic {
+.album {
     display: flex;
     flex: 10;
     width: 100%;
@@ -573,11 +573,6 @@ nav div:hover {
     /* left: 285px; */
     /* position: relative; */
     /* background-color: #77a6a1; */
-}
-
-
-.album {
-    width: 100%;
 }
 
 .title-container {
@@ -652,7 +647,7 @@ nav div:hover {
 } */
 
 @media screen and (max-width:768px) {
-    .pic {
+    .album {
         display: none;
     }
 }
