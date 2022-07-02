@@ -523,6 +523,7 @@ nav {
     width: 285px;
     /* height: 40px; */
     /* background-color: #bfb2aa; */
+    z-index: 999;
 }
 
 .spring,
@@ -572,37 +573,28 @@ nav div:hover {
     /* top: 25vh; */
     /* left: 285px; */
     /* position: relative; */
-    /* background-color: #77a6a1; */
+    background-color: #77a6a1;
 }
-
 
 .album {
     width: 100%;
 }
 
 .title-container {
-    width: 70vh;
+    width: 20vh;
     position: absolute;
     z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    background-image: url(/images/logo/logo2.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    right: 150px;
+    top: 300px;
 }
 
 
-
-/* #a {
+#a {
     position: absolute;
     width: 250px;
 
     top: 73px;
-    left: -10px;
+    left: 142px;
 
 }
 
@@ -610,8 +602,8 @@ nav div:hover {
     position: absolute;
     width: 350px;
 
-    top: -10px;
-    left: 770px;
+    top: 0;
+    left: 570px;
 
 }
 
@@ -620,7 +612,7 @@ nav div:hover {
     width: 300px;
 
     top: 0;
-    right: -20px;
+    right: 70px;
 
 
 }
@@ -629,8 +621,8 @@ nav div:hover {
     position: absolute;
     width: 250px;
 
-    bottom: 115px;
-    left: 581px;
+    bottom: 55px;
+    left: 81px;
 
 }
 
@@ -638,18 +630,18 @@ nav div:hover {
     position: absolute;
     height: 300px;
 
-    bottom: 220px;
-    left: -20px;
+    bottom: 120px;
+    left: 463px;
 }
 
 #f {
     position: absolute;
-    height: 500px;
-
+    width: 500px;
+    
     bottom: 75px;
     right: 50px;
 
-} */
+}
 
 @media screen and (max-width:768px) {
     .pic {
