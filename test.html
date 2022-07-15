@@ -36,8 +36,6 @@
     <script src="https://kit.fontawesome.com/6bedaa5d3a.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-    <!-- <script src="js/comm.js"></script> -->
-    <!-- <script src="js/product.js"></script> -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -48,6 +46,48 @@
     <script>
         $(function () {
 
+            var winwidth = window.outerWidth;
+
+            function setMenu() {
+                if (!window.matchMedia('(max-width:768px)').matches) {
+                    // 如果螢幕>768執行
+                    $('.hamburger').hide();
+                    // $('.mainNav ul ul').hide();
+
+                    // 下拉選單
+                    $('.mainNav>ul>li').hover(function () {
+                        $(this).children('ul').stop().animate({ 'top': 0 }, 500, 'easeOutBack');
+                    }, function () {
+                        $(this).children('ul').stop().animate({ 'top': -300 }, 500, 'easeInBack');
+                    });
+
+                } else {
+                    // 否則執行
+                    $('.hamburger').show();
+                }
+
+                // 框框
+                $('.mainNav li a').hover(function () {
+                    $(this).css({ 'background-image': 'url(/images/nav/nav1.svg)' })
+                }, function () {
+                    $(this).css({ 'background-image': 'none' })
+                })
+
+                $('.mainNav li a').click(function () {
+                    $(this).next().stop().slideToggle()
+                })
+
+            }
+
+            setMenu();
+
+            // 看螢幕大小有沒有變化
+            $(window).resize(function () {
+                if (window.outerWidth != winwidth) {
+                    setMenu();
+                    winwidth = window.outerWidth
+                }
+            })
 
         });
     </script>
@@ -57,6 +97,7 @@
     <header>
         <a class="logo" href="index.html">
             <img src="/images/logo/logo2.png" alt="fantine logo">
+            <img src="/images/logo/logo1.svg" alt="fantine logo">
         </a>
 
         <div class="mainNav">
@@ -82,7 +123,7 @@
                 <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
             </ul>
         </div>
-        
+
         <a href="javascript:;" class="hamburger">
             <div></div>
             <div></div>
@@ -91,7 +132,7 @@
     </header>
 
     <main>
-        
+
         <!-- <div class="album">
             <div> <a class="title-container" href="index-spring.html"></a></div>
             <div> <img id="a" src="images/pic/pic1.svg" alt=""> </div>
