@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Magra&display=swap');
+
+body {
+    font-family: 'Magra', "Noto Sans TC", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Forum', cursive;
+    font-style: normal;
+}
+
+/* ----------header---------- */
+header {
+    width: 100%;
+    height: 42px;
+    /* background-color: #77a6a1; */
+    display: flex;
+    z-index: 99999;
+    padding: 5px;
+}
+
+header a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.logo {
+    flex: 2;
+    /* background-color: #3c6373; */
+    display: block;
+    text-align: center;
+}
+
+.logo img {
+    height: 100%;
+}
+
+/* ----選單 */
+.space {
+    flex: 5;
+}
+
+.mainNav {
+    flex: 4;
+    margin: 0 15px;
+    display: flex;
+    width: 100%;
+    font-size: 2em;
+
+}
+
+.mainNav ul {
+    margin: 0;
+    list-style-type: none;
+}
+.mainNav ul li{
+    list-style-type: none;
+}
+
+.mainNav a {
+    width: 155px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+}
+
+.mainNav>ul {
+    display: flex;
+}
+
+.mainNav ul ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainNav ul ul li a {
+
+    margin-top: 5px;
+}
+
+.mainNav li:hover a {
+    /* background-color: #bfb2aa; */
+    background-image: url(/images/nav/nav1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+/* ----------header---------- */
+
+/* -------漢堡*/
+.hamburger {
+    width: 50px;
+    height: 50px;
+    /* border: 1px dashed #c5d99a; */
+    position: fixed;
+    top: 45px;
+    right: 10px;
+    z-index: 110;
+    display: block;
+}
+
+.hamburger div {
+    background-color: #000000;
+    height: 4px;
+    margin: 8px;
+    transition: 1s;
+
+}
+/* -------漢堡*/
+
+/* -----購物車 */
+.cart {
+    flex: 1;
+    /* background-color: #d9d0c7; */
+    display: flex;
+    /* text-align: center; */
+    justify-content: flex-end;
+}
+
+.cart ul {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.cart ul li {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.cart ul li a {
+    display: block;
+    margin: 0.2em;
+    text-decoration: none;
+    color: #000;
+}
+/* -----購物車 */
+
+/* -----main */
