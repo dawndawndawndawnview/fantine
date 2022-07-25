@@ -29,132 +29,128 @@
     <link rel="shortcut icon" href="images/logo/fantine-logo-icon2.png" type="image/x-icon">
     <link rel="bookmark" href="images/logo/fantine-logo-icon2.png" type="image/x-icon">
     <title>芳亭-首頁</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/re.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/product.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://kit.fontawesome.com/6bedaa5d3a.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
 
-    <style>
-        #a {
-            position: absolute;
-            width: 250px;
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-            top: 73px;
-            left: -10px;
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 
-        }
+    <script>
+        $(function () {
 
-        #b {
-            position: absolute;
-            width: 350px;
+            // $('header').load('headerContent.html', function () {
+            //     mainNavEff();
 
-            top: -10px;
-            left: 770px;
+                var winwidth = window.outerWidth;
 
-        }
+                function setMenu() {
+                    if (!window.matchMedia('(max-width:768px)').matches) {
+                        // 如果螢幕>768執行
+                        $('.hamburger').hide();
+                        // $('.mainNav ul ul').hide();
 
-        #c {
-            position: absolute;
-            width: 300px;
+                        // 下拉選單
+                        $('.mainNav>ul>li').hover(function () {
+                            $(this).children('ul').stop().animate({ 'top': 0 }, 500, 'easeOutBack');
+                        }, function () {
+                            $(this).children('ul').stop().animate({ 'top': -300 }, 500, 'easeInBack');
+                        });
 
-            top: 0;
-            right: -20px;
+                    } else {
+                        // 否則執行
+                        $('.hamburger').show();
+                    }
 
+                    // 框框
+                    $('.mainNav li a').hover(function () {
+                        $(this).css({ 'background-image': 'url(/images/nav/nav1.svg)' })
+                    }, function () {
+                        $(this).css({ 'background-image': 'none' })
+                    })
 
-        }
+                    $('.mainNav li a').click(function () {
+                        $(this).next().stop().slideToggle()
+                    })
 
-        #d {
-            position: absolute;
-            width: 250px;
+                }
 
-            bottom: 115px;
-            left: 581px;
+                setMenu();
 
-        }
+                // 看螢幕大小有沒有變化
+                $(window).resize(function () {
+                    if (window.outerWidth != winwidth) {
+                        setMenu();
+                        winwidth = window.outerWidth
+                    }
+                })
 
-        #e {
-            position: absolute;
-            height: 300px;
-
-            bottom: 220px;
-            left: -20px;
-        }
-
-        #f {
-            position: absolute;
-            height: 500px;
-
-            bottom: 75px;
-            right: 50px;
-
-        }
-    </style>
-
+            });
+    </script>
 </head>
 
 <body>
-    <!-- <div class="container"> -->
     <header>
-        <div class="logo"><a href="index.html"></a></div>
-        <div class="navbar">
-            <div class="large">
-                <ul>
-                    <li class="product"><a href="#">product</a>
-                        <ul>
-                            <li class="season"><a href="#">season</a></li>
-                            <li class="box"><a href="#">box</a></li>
-                        </ul>
-                    </li>
-                    <li class="about"><a href="#">about</a></li>
-                    <li class="contact"><a href="#">contact</a></li>
-                </ul>
-            </div>
+        <a class="logo" id="logoW" href="index.html">
+            <img src="/images/logo/logo2.png" alt="fantine logo">
+        </a>
+        <a id="logo768" href="index.html">
+            <img src="/images/logo/logo1.svg" alt="fantine logo">
+        </a>
 
-            <div class="small">
-                <ul>
-                    <li class="s-product"><a href="#">product</a></li>
-                    <li class="s-season"><a href="#">season</a></li>
-                    <li class="s-box"><a href="#">box</a></li>
-                    <li>
-                        <div class="s-border"></div>
-                    </li>
-                    <li class="s-about"><a href="#">about</a></li>
-                    <li class="s-contact"><a href="#">contact</a></li>
-                </ul>
-            </div>
+        <div class="mainNav">
+            <ul>
+                <li class="product">
+                    <a href="#">product</a>
+                    <ul>
+                        <li class="season"><a href="#">season</a></li>
+                        <li class="box"><a href="#">box</a></li>
+                    </ul>
+                </li>
+                <li class="about">
+                    <a href="#">about</a>
+                </li>
+                <li class="contact">
+                    <a href="#">contact</a>
+                </li>
+            </ul>
         </div>
-        <div class="space"></div>
-        <div class="right">
+
+        <div class="cart">
             <ul>
                 <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
             </ul>
         </div>
-        <a href="javascript:;" class="hamburger ">
+
+        <a href="javascript:;" class="hamburger">
             <div></div>
             <div></div>
             <div></div>
         </a>
     </header>
-    <!-- </div> -->
 
-    <div class="main">
-        <!-- <nav>
-            <div class="spring"><a href="index-spring.html">spring</a></div>
-            <div class="summer"><a href="index-summer.html">summer</a></div>
-            <div class="autumn"><a href="index-autumn.html">autumn</a></div>
-            <div class="winter"><a href="index-winter.html">winter</a></div>
-        </nav> -->
+    <main>
+
         <div class="album">
-
-            <div> <a class="title-container" href="index-spring.html"></a></div>
+            <div> <a class="title" href="index.html"></a></div>
             <div> <img id="a" src="images/pic/pic1.svg" alt=""> </div>
             <div> <img id="b" src="images/pic/pic2.svg" alt=""> </div>
             <div> <img id="c" src="images/pic/pic3.svg" alt=""> </div>
             <div> <img id="d" src="images/pic/pic4.svg" alt=""> </div>
             <div> <img id="e" src="images/pic/pic5.svg" alt=""> </div>
-            <div> <img id="f" src="images/pic/pic6.svg" alt=""> </div>
+            <div> <img id="f" src="images/pic/pic7.svg" alt=""> </div>
+            <div> <img id="g" src="images/pic/pic8.svg" alt=""> </div>
         </div>
-    </div>
 
-    <!-- <img class="title-container" src="images/logo2.png" alt=""> -->
+    </main>
+
 </body>
 
 </html>
