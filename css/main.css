@@ -190,6 +190,14 @@ header a {
         right: -10px;
     }
 
+    .album .title {
+        display: none;
+    }
+
+    .album img {
+        display: none;
+    }
+
 }
 
 /* ----------header---------- */
@@ -197,17 +205,18 @@ header a {
 
 
 /* -----main */
-.album{
+.album {
     display: flex;
 }
-.album img{
+
+.album img {
     width: 20vh;
 }
 
-.album .title{
+.album .title {
     width: 70vh;
+    display: block;
     position: absolute;
-    z-index: 10;
     top: 0;
     left: 0;
     right: 0;
@@ -218,37 +227,44 @@ header a {
     background-position: center;
     background-size: contain;
 }
-#a{
+
+#a {
     position: absolute;
     top: 60px;
     left: 50px;
 }
-#b{
+
+#b {
     position: absolute;
     top: 150px;
     left: 300px;
 }
-#c{
+
+#c {
     position: absolute;
     top: 80px;
     right: 500px;
 }
-#d{
+
+#d {
     position: absolute;
     bottom: 80px;
     left: 50px;
 }
-#e{
+
+#e {
     position: absolute;
     bottom: 80px;
     left: 300px;
 }
-#f{
+
+#f {
     position: absolute;
     bottom: 80px;
     right: 150px;
 }
-#g{
+
+#g {
     position: absolute;
     bottom: 50vh;
     right: 250px;
