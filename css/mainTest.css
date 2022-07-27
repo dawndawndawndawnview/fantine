@@ -8,12 +8,10 @@ body {
 
 /* ----------header---------- */
 header {
-    
-    width: 100%;
+    width: calc(100% - 20px);
     height: 42px;
-    /* background-color: #77a6a1; */
     display: flex;
-    z-index: 99999;
+    z-index: 9999;
     padding: 10px;
 }
 
@@ -51,6 +49,7 @@ header a {
 
 .mainNav ul {
     list-style-type: none;
+    z-index: 999;
 }
 
 .mainNav ul li {
@@ -243,12 +242,15 @@ header a {
 .album:nth-of-type(2) {
     border: 1px dashed aqua;
 }
+
 .album:nth-of-type(3) {
     border: 1px dashed blue;
 }
+
 .album:nth-of-type(4) {
     border: 1px dashed coral;
 }
+
 .album:nth-of-type(5) {
     border: 1px dashed darkcyan;
 }
@@ -260,19 +262,22 @@ header a {
     bottom: 150px;
 }
 
-.album:nth-of-type(2) .title{
+.album:nth-of-type(2) .title {
     border: 1px dashed aqua;
     background-image: url(/images/title/spring.png);
 }
-.album:nth-of-type(3) .title{
+
+.album:nth-of-type(3) .title {
     border: 1px dashed blue;
     background-image: url(/images/title/summer.png);
 }
-.album:nth-of-type(4) .title{
+
+.album:nth-of-type(4) .title {
     border: 1px dashed coral;
     background-image: url(/images/title/autumn.png);
 }
-.album:nth-of-type(5) .title{
+
+.album:nth-of-type(5) .title {
     border: 1px dashed darkcyan;
     background-image: url(/images/title/winter.png);
 }
@@ -314,6 +319,12 @@ header a {
 }
 
 #g {
+    position: absolute;
+    bottom: 50vh;
+    right: 250px;
+}
+
+[id$="Pic1"] {
     position: absolute;
     bottom: 50vh;
     right: 250px;
