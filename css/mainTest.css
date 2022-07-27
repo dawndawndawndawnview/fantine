@@ -211,6 +211,7 @@ header a {
     height: calc(100vh - 62px);
     width: 100vw;
     position: relative;
+    overflow: hidden;
 }
 
 .album img {
@@ -223,6 +224,7 @@ header a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    z-index: 999;
 }
 
 .album:nth-of-type(1) {
@@ -258,17 +260,16 @@ header a {
 .album:nth-of-type(n+2) .title {
     width: 20vh;
     height: 20vh;
-    right: 300px;
-    bottom: 150px;
+    right: 10%;
+    bottom: 15%;
 }
 
 .album:nth-of-type(2) .title {
-    border: 1px dashed aqua;
     background-image: url(/images/title/spring.png);
 }
 
 .album:nth-of-type(3) .title {
-    border: 1px dashed blue;
+
     background-image: url(/images/title/summer.png);
 }
 
@@ -324,11 +325,128 @@ header a {
     right: 250px;
 }
 
-[id$="Pic1"] {
+.album [id*="Pic"] {
     position: absolute;
-    bottom: 50vh;
-    right: 250px;
+    width: 37vh;
 }
 
+#springPic1 {
+    top: 20vh;
+    left: 50px;
+}
 
+#springPic2 {
+    top: 5%;
+    left: 30%;
+}
+
+#springPic3 {
+    bottom: 10%;
+    left: 10%;
+}
+
+#springPic4 {
+    top: 20%;
+    right: 20%;
+}
+
+#springPic5 {
+    top: 40%;
+    left: 35%;
+}
+
+#springPic6 {
+    top: 10%;
+    right: 0;
+}
+
+#summerPic1 {
+    top: 10%;
+    left: 5%;
+}
+
+#summerPic2 {
+    top: 5%;
+    right: 30%;
+}
+
+#summerPic3 {
+    top: 15%;
+    right: 0;
+}
+
+#summerPic4 {
+    bottom: 10%;
+    left: 10%;
+}
+
+#summerPic5 {
+    bottom: 30%;
+    left: 35%;
+}
+
+#summerPic6 {
+    bottom: 0;
+    right: 15%;
+}
+
+#autumnPic1 {
+    top: 10%;
+    left: 5%;
+}
+
+#autumnPic2 {
+    top: 0;
+    left: 40%;
+}
+
+#autumnPic3 {
+    top: 15%;
+    right: 0;
+}
+
+#autumnPic4 {
+    bottom: 5%;
+    left: 0;
+}
+
+#autumnPic5 {
+    bottom: 30%;
+    left: 35%;
+}
+
+#autumnPic6 {
+    bottom: 0;
+    right: 20%;
+}
+
+#winterPic1 {
+    top: 10%;
+    left: 5%;
+}
+
+#winterPic2 {
+    top: 0;
+    left: 40%;
+}
+
+#winterPic3 {
+    top: 15%;
+    right: 0;
+}
+
+#winterPic4 {
+    bottom: 5%;
+    left: 0;
+}
+
+#winterPic5 {
+    bottom: 30%;
+    left: 35%;
+}
+
+#winterPic6 {
+    bottom: 0;
+    right: 20%;
+}
 /* -----main */
