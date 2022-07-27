@@ -265,6 +265,7 @@ header a {
 }
 
 .album:nth-of-type(2) .title {
+    
     background-image: url(/images/title/spring.png);
 }
 
@@ -274,12 +275,12 @@ header a {
 }
 
 .album:nth-of-type(4) .title {
-    border: 1px dashed coral;
+
     background-image: url(/images/title/autumn.png);
 }
 
 .album:nth-of-type(5) .title {
-    border: 1px dashed darkcyan;
+
     background-image: url(/images/title/winter.png);
 }
 
@@ -421,28 +422,28 @@ header a {
 }
 
 #winterPic1 {
-    top: 10%;
-    left: 5%;
-}
-
-#winterPic2 {
     top: 0;
-    left: 40%;
-}
-
-#winterPic3 {
-    top: 15%;
-    right: 0;
-}
-
-#winterPic4 {
-    bottom: 5%;
     left: 0;
 }
 
+#winterPic2 {
+    top: 15%;
+    left: 25%;
+}
+
+#winterPic3 {
+    top: -15%;
+    right: 30%;
+}
+
+#winterPic4 {
+    top: -10%;
+    right: 0;
+}
+
 #winterPic5 {
-    bottom: 30%;
-    left: 35%;
+    bottom: -15%;
+    left: 0;
 }
 
 #winterPic6 {
