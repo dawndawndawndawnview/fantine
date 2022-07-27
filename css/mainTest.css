@@ -205,13 +205,15 @@ header a {
 
 
 /* -----main */
+
 .album {
     display: flex;
     box-sizing: border-box;
     height: calc(100vh - 62px);
     width: 100vw;
-    position: relative;
+    position: absolute;
     overflow: hidden;
+
 }
 
 .album img {
@@ -242,6 +244,7 @@ header a {
 }
 
 .album:nth-of-type(2) {
+
     border: 1px dashed aqua;
 }
 
@@ -265,7 +268,7 @@ header a {
 }
 
 .album:nth-of-type(2) .title {
-    
+
     background-image: url(/images/title/spring.png);
 }
 
@@ -450,4 +453,5 @@ header a {
     bottom: 0;
     right: 20%;
 }
+
 /* -----main */
