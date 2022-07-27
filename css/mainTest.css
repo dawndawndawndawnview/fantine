@@ -208,7 +208,7 @@ header a {
 .album {
     display: flex;
     box-sizing: border-box;
-    height: 100vh;
+    height: calc(100vh - 62px);
     width: 100vw;
     position: relative;
 }
