@@ -30,7 +30,7 @@
     <link rel="bookmark" href="images/logo/fantine-logo-icon2.png" type="image/x-icon">
     <title>芳亭-首頁</title>
     <link rel="stylesheet" href="css/re.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mainTest.css">
     <!-- <link rel="stylesheet" href="css/product.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <script src="https://kit.fontawesome.com/6bedaa5d3a.js" crossorigin="anonymous"></script>
@@ -45,54 +45,71 @@
 
     <script>
         $(function () {
-
+            $('main .album:nth-of-type(1)').load('fruit.html');
+            $('main .album:nth-of-type(2)').load('spring.html');
+            $('main .album:nth-of-type(3)').load('summer.html');
+            $('main .album:nth-of-type(4)').load('autumn.html');
+            $('main .album:nth-of-type(5)').load('winter.html');
             // $('header').load('headerContent.html', function () {
             //     mainNavEff();
 
-                var winwidth = window.outerWidth;
+            var winwidth = window.outerWidth;
 
-                function setMenu() {
-                    if (!window.matchMedia('(max-width:768px)').matches) {
-                        // 如果螢幕>768執行
-                        $('.hamburger').hide();
-                        // $('.mainNav ul ul').hide();
+            function setMenu() {
+                if (!window.matchMedia('(max-width:768px)').matches) {
+                    // 如果螢幕>768執行
+                    $('.hamburger').hide();
+                    // $('.mainNav ul ul').hide();
 
-                        // 下拉選單
-                        $('.mainNav>ul>li').hover(function () {
-                            $(this).children('ul').stop().animate({ 'top': 0 }, 500, 'easeOutBack');
-                        }, function () {
-                            $(this).children('ul').stop().animate({ 'top': -300 }, 500, 'easeInBack');
-                        });
-
-                    } else {
-                        // 否則執行
-                        $('.hamburger').show();
-                    }
-
-                    // 框框
-                    $('.mainNav li a').hover(function () {
-                        $(this).css({ 'background-image': 'url(/images/nav/nav1.svg)' })
+                    // 下拉選單
+                    $('.mainNav>ul>li').hover(function () {
+                        $(this).children('ul').stop().animate({ 'top': 0 }, 500, 'easeOutBack');
                     }, function () {
-                        $(this).css({ 'background-image': 'none' })
-                    })
+                        $(this).children('ul').stop().animate({ 'top': -300 }, 500, 'easeInBack');
+                    });
 
-                    $('.mainNav li a').click(function () {
-                        $(this).next().stop().slideToggle()
-                    })
-
+                } else {
+                    // 否則執行
+                    $('.hamburger').show();
                 }
 
-                setMenu();
-
-                // 看螢幕大小有沒有變化
-                $(window).resize(function () {
-                    if (window.outerWidth != winwidth) {
-                        setMenu();
-                        winwidth = window.outerWidth
-                    }
+                // 框框
+                $('.mainNav li a').hover(function () {
+                    $(this).css({ 'background-image': 'url(/images/nav/nav1.svg)' });
+                }, function () {
+                    $(this).css({ 'background-image': 'none' });
                 })
 
-            });
+                $('.mainNav li a').click(function () {
+                    $(this).next().stop().slideToggle();
+                })
+
+                // 換頁
+
+                $(window).scroll(function () {
+                    var scrollVal = $(this).scrollTop();
+                    // console.log(scrollVal);
+                    if(scrollVal>scrollVal){
+                        $(".album")
+                    }
+                    // for(i=0;scrollVal>scrollVal;i++){
+
+                    // }
+                })
+
+            }
+
+            setMenu();
+
+            // 看螢幕大小有沒有變化
+            $(window).resize(function () {
+                if (window.outerWidth != winwidth) {
+                    setMenu();
+                    winwidth = window.outerWidth
+                }
+            })
+
+        });
     </script>
 </head>
 
@@ -139,58 +156,23 @@
     <main>
 
         <div class="album">
-            <div> <a class="title" href="index.html"></a></div>
-            <div> <img id="a" src="images/pic/pic1.svg" alt=""> </div>
-            <div> <img id="b" src="images/pic/pic2.svg" alt=""> </div>
-            <div> <img id="c" src="images/pic/pic3.svg" alt=""> </div>
-            <div> <img id="d" src="images/pic/pic4.svg" alt=""> </div>
-            <div> <img id="e" src="images/pic/pic5.svg" alt=""> </div>
-            <div> <img id="f" src="images/pic/pic7.svg" alt=""> </div>
-            <div> <img id="g" src="images/pic/pic8.svg" alt=""> </div>
+            <!-- fruit.html  -->
         </div>
 
         <div class="album">
-            <div> <img class="titleSeason" src="images/title/spring.png" alt=""> </div>
-            <div> <a class="title" href="spring.html"></a></div>
-            <div> <img id="springPic1" src="images/spring/litchi/litchi04.jpg" alt=""> </div>
-            <div> <img id="springPic2" src="images/spring/Loquat/Loquat03.jpg" alt=""> </div>
-            <div> <img id="springPic3" src="images/spring/Loquat/Loquat01.jpg" alt=""> </div>
-            <div> <img id="springPic4" src="images/spring/plum/plum01.jpg" alt=""> </div>
-            <div> <img id="springPic5" src="images/spring/prune/prune08.jpg" alt=""> </div>
-            <div> <img id="springPic6" src="images/spring/litchi/litchi02.jpg" alt=""> </div>
+            <!-- spring.html  -->
         </div>
 
         <div class="album">
-            <div> <img class="titleSeason" src="images/title/summer.png" alt=""> </div>
-            <div> <a class="title" href="summer.html"></a></div>
-            <div> <img id="summerPic1" src="images/summer/peach/peach07.jpg" alt=""> </div>
-            <div> <img id="summerPic2" src="images/summer/peach/peach10.jpg" alt=""> </div>
-            <div> <img id="summerPic3" src="images/summer/Grape/Grape06.jpg" alt=""> </div>
-            <div> <img id="summerPic4" src="images/summer/Grape/Grape08.jpg" alt=""> </div>
-            <div> <img id="summerPic5" src="images/summer/pear/pear21.jpg" alt=""> </div>
-            <div> <img id="summerPic6" src="images/summer/pear/pear22.jpg" alt=""> </div>
+            <!-- summer.html  -->
         </div>
 
         <div class="album">
-            <div> <img class="titleSeason" src="images/title/autumn.png" alt=""> </div>
-            <div> <a class="title" href="autumn.html"></a></div>
-            <div> <img id="autumePic1" src="images/autumn/Persimmon/Persimmon05.jpg" alt=""> </div>
-            <div> <img id="autumePic2" src="images/autumn/roselle/roselle05.jpg" alt=""> </div>
-            <div> <img id="autumePic3" src="images/autumn/Persimmon/Persimmon06.jpg" alt=""> </div>
-            <div> <img id="autumePic4" src="images/autumn/roselle/roselle03.jpg" alt=""> </div>
-            <div> <img id="autumePic5" src="images/autumn/Pomelo/Pomelo04.jpg" alt=""> </div>
-            <div> <img id="autumePic6" src="images/autumn/Pomelo/Pomelo01.jpg" alt=""> </div>
+            <!-- autumn.html  -->
         </div>
 
         <div class="album">
-            <div> <img class="titleSeason" src="images/title/winter.png" alt=""> </div>
-            <div> <a class="title" href="winter.html"></a></div>
-            <div> <img id="winterPic1" src="images/winter/Orange/Tangerine07.jpg" alt=""> </div>
-            <div> <img id="winterPic2" src="images/winter/strawberry/strawberry04.jpg" alt=""> </div>
-            <div> <img id="winterPic3" src="images/winter/Kumquats/Kumquats01.jpg" alt=""> </div>
-            <div> <img id="winterPic4" src="images/winter/strawberry/strawberry09.jpg" alt=""> </div>
-            <div> <img id="winterPic5" src="images/winter/Orange/Orange03.jpg" alt=""> </div>
-            <div> <img id="winterPic6" src="images/winter/Orange/Orange04.jpg" alt=""> </div>
+            <!-- winter.html  -->
         </div>
 
     </main>

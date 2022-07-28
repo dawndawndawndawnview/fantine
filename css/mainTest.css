@@ -13,6 +13,7 @@ header {
     display: flex;
     z-index: 9999;
     padding: 10px;
+    position: fixed;
 }
 
 header a {
@@ -209,10 +210,13 @@ header a {
 .album {
     display: flex;
     box-sizing: border-box;
-    height: calc(100vh - 62px);
+    /* height: calc(100vh - 62px); */
+    height: 100vh;
     width: 100vw;
     position: absolute;
+    /* position: relative; */
     overflow: hidden;
+    margin: 10px 0;
 
 }
 
