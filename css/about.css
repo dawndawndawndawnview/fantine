@@ -1,0 +1,14 @@
+main {
+  display: flex;
+}
+main #left {
+  flex: 1;
+  border: 1px dashed #DA923E;
+  height: 100vh;
+}
+main #right {
+  flex: 1;
+  background-color: #FFFEF7;
+  border: 1px dashed #91AC48;
+  height: 100vh;
+}

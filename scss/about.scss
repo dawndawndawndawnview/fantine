@@ -1,0 +1,22 @@
+$fWhite : #FFFEF7;
+$spring : #E88FA0;
+$summer : #91AC48;
+$autumn : #DA923E;
+$winter : #B081B7;
+
+main {
+    display: flex;
+
+    #left {
+        flex: 1;
+        border: 1px dashed $autumn;
+        height: 100vh;
+    }
+
+    #right {
+        flex: 1;
+        background-color: $fWhite;
+        border: 1px dashed $summer;
+        height: 100vh;
+    }
+}
