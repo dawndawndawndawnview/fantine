@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Forum&family=Magra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Magra&family=Noto+Sans+TC&display=swap');
 
 body {
-    font-family: 'Magra', "Noto Sans TC", Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: 'Magra', "Noto Sans TC", Verdana, Geneva, Tahoma, sans-serif; */
     font-family: 'Forum', cursive;
+    font-family: 'Noto Sans TC', sans-serif;
     font-style: normal;
 }
 
@@ -196,10 +197,11 @@ header a {
 
 
 /* -----main */
-.space{
+.space {
     height: 10px;
     /* background-color: rgb(15, 128, 96); */
 }
+
 .album {
     display: flex;
     box-sizing: border-box;
