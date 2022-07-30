@@ -36,6 +36,8 @@
     <script src="https://kit.fontawesome.com/6bedaa5d3a.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/index.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -45,6 +47,12 @@
 
     <script>
         $(function () {
+            $('header').load('headerContent',function(){
+                setMenu()
+            })
+            $('main').load('indexContent.html',function(){
+                indexEff()
+            })
             $('main .album:nth-of-type(1)').load('fruit.html');
             $('main .album:nth-of-type(2)').load('spring.html');
             $('main .album:nth-of-type(3)').load('summer.html');
@@ -56,129 +64,130 @@
 
             var winwidth = window.outerWidth;
 
-            function setMenu() {
-                if (!window.matchMedia('(max-width:768px)').matches) {
-                    // 如果螢幕>768執行
-                    $('.hamburger').hide();
-                    // $('.mainNav ul ul').hide();
+            // function setMenu() {
+            //     if (!window.matchMedia('(max-width:768px)').matches) {
+            //         // 如果螢幕>768執行
+            //         $('.hamburger').hide();
+            //         // $('.mainNav ul ul').hide();
 
-                    // 下拉選單
-                    $('.mainNav>ul>li').hover(function () {
-                        $(this).children('ul').stop().animate({ 'top': 0 }, 500, 'easeOutBack');
-                    }, function () {
-                        $(this).children('ul').stop().animate({ 'top': -300 }, 500, 'easeInBack');
-                    });
+            //         // 下拉選單
+            //         $('.mainNav>ul>li').hover(function () {
+            //             $(this).children('ul').stop().animate({ 'top': 0 }, 500, 'easeOutBack');
+            //         }, function () {
+            //             $(this).children('ul').stop().animate({ 'top': -300 }, 500, 'easeInBack');
+            //         });
 
-                } else {
-                    // 否則執行
-                    $('.hamburger').show();
-                }
+            //     } else {
+            //         // 否則執行
+            //         $('.hamburger').show();
+            //     }
 
-                // 框框
-                $('.mainNav li a').hover(function () {
-                    $(this).css({ 'background-image': 'url(/images/nav/nav1.svg)' });
-                }, function () {
-                    $(this).css({ 'background-image': 'none' });
-                })
+            //     // 框框
+            //     $('.mainNav li a').hover(function () {
+            //         $(this).css({ 'background-image': 'url(/images/nav/nav1.svg)' });
+            //     }, function () {
+            //         $(this).css({ 'background-image': 'none' });
+            //     })
 
-                $('.mainNav li a').click(function () {
-                    $(this).next().stop().slideToggle();
-                })
+            //     $('.mainNav li a').click(function () {
+            //         $(this).next().stop().slideToggle();
+            //     })
 
-                // 換頁
-                var timer
-                window.scrollTo({ 'top': 10 });
+            //     // 換頁
+            //     var timer
+            //     window.scrollTo({ 'top': 10 });
 
-                $(window).scroll(function () {
-                    window.clearTimeout(timer)
+            //     $(window).scroll(function () {
+            //         window.clearTimeout(timer)
 
-                    timer = window.setTimeout(function () {
-                        console.log('scroll event')
-                        //callback your coding
-                    }, 100)
+            //         timer = window.setTimeout(function () {
+            //             console.log('scroll event')
+            //             //callback your coding
+            //         }, 100)
 
-                    var scrollOut = $(window).scrollTop()
-                    // 滾動的高度
-                    var albumH = $(".album").outerHeight()
-                    // 一個.album的高度
-                    let fruit = 10
-                    let spring = 10 + albumH * 1
-                    let summer = 10 + albumH * 2
-                    let autumn = 10 + albumH * 3
-                    let winter = 10 + albumH * 4
-                    // let endP = 10 + albumH * 5
+            //         var scrollOut = $(window).scrollTop()
+            //         // 滾動的高度
+            //         var albumH = $(".album").outerHeight()
+            //         // 一個.album的高度
+            //         let fruit = 10
+            //         let spring = 10 + albumH * 1
+            //         let summer = 10 + albumH * 2
+            //         let autumn = 10 + albumH * 3
+            //         let winter = 10 + albumH * 4
+            //         // let endP = 10 + albumH * 5
 
-                    var nowPage = (scrollOut - scrollOut % albumH) / albumH
-                    // 現在位置
+            //         var nowPage = (scrollOut - scrollOut % albumH) / albumH
+            //         // 現在位置
 
-                    // var pageN = $(".album").length
-                    console.log('nowPage', nowPage)
-                    console.log(scrollOut)
+            //         // var pageN = $(".album").length
+            //         console.log('nowPage', nowPage)
+            //         console.log(scrollOut)
 
 
-                    if (nowPage < 1) {
-                        if (scrollOut < fruit) {
-                            window.scrollTo({ 'top': winter });
-                            // nowPage = 'spring'
-                        } else if (scrollOut > fruit) {
-                            window.scrollTo({ 'top': spring });
-                            // nowPage = 'winter'
-                        } else {
-                            window.scrollTo({ 'top': fruit });
-                            // nowPage = 'fruit'
-                        }
-                    } else if (nowPage < 2) {
-                        if (scrollOut < spring) {
-                            window.scrollTo({ 'top': fruit });
-                            // nowPage = 'fruit'
-                        } else if (scrollOut > spring) {
-                            window.scrollTo({ 'top': summer });
-                            // nowPage = 'summer'
-                        } else {
-                            window.scrollTo({ 'top': spring });
-                            // nowPage = 'spring'
-                        }
-                    } else if (nowPage < 3) {
-                        if (scrollOut < summer) {
-                            window.scrollTo({ 'top': spring });
-                            // nowPage = 'spring'
-                        } else if (scrollOut > summer) {
-                            window.scrollTo({ 'top': autumn });
-                            // nowPage = 'autumn'
-                        } else {
-                            window.scrollTo({ 'top': summer });
-                            // nowPage = 'summer'
-                        }
-                    } else if (nowPage < 4) {
-                        if (scrollOut < autumn) {
-                            window.scrollTo({ 'top': summer });
-                            // nowPage = 'summer'
-                        } else if (scrollOut > autumn) {
-                            window.scrollTo({ 'top': winter });
-                            // nowPage = 'winter'
-                        } else {
-                            window.scrollTo({ 'top': autumn });
-                            // nowPage = 'autumn'
-                        }
-                    } else if (nowPage < 5) {
-                        if (scrollOut < winter) {
-                            window.scrollTo({ 'top': autumn });
-                            // nowPage = 'autumn'
-                        } else if (scrollOut > winter) {
-                            window.scrollTo({ 'top': fruit });
-                            // nowPage = 'fruit'
-                        } else {
-                            window.scrollTo({ 'top': winter });
-                            // nowPage = 'winter'
-                        }
-                    }
+            //         if (nowPage < 1) {
+            //             if (scrollOut < fruit) {
+            //                 window.scrollTo({ 'top': winter });
+            //                 // nowPage = 'spring'
+            //             } else if (scrollOut > fruit) {
+            //                 window.scrollTo({ 'top': spring });
+            //                 // nowPage = 'winter'
+            //             } else {
+            //                 window.scrollTo({ 'top': fruit });
+            //                 // nowPage = 'fruit'
+            //             }
+            //         } else if (nowPage < 2) {
+            //             if (scrollOut < spring) {
+            //                 window.scrollTo({ 'top': fruit });
+            //                 // nowPage = 'fruit'
+            //             } else if (scrollOut > spring) {
+            //                 window.scrollTo({ 'top': summer });
+            //                 // nowPage = 'summer'
+            //             } else {
+            //                 window.scrollTo({ 'top': spring });
+            //                 // nowPage = 'spring'
+            //             }
+            //         } else if (nowPage < 3) {
+            //             if (scrollOut < summer) {
+            //                 window.scrollTo({ 'top': spring });
+            //                 // nowPage = 'spring'
+            //             } else if (scrollOut > summer) {
+            //                 window.scrollTo({ 'top': autumn });
+            //                 // nowPage = 'autumn'
+            //             } else {
+            //                 window.scrollTo({ 'top': summer });
+            //                 // nowPage = 'summer'
+            //             }
+            //         } else if (nowPage < 4) {
+            //             if (scrollOut < autumn) {
+            //                 window.scrollTo({ 'top': summer });
+            //                 // nowPage = 'summer'
+            //             } else if (scrollOut > autumn) {
+            //                 window.scrollTo({ 'top': winter });
+            //                 // nowPage = 'winter'
+            //             } else {
+            //                 window.scrollTo({ 'top': autumn });
+            //                 // nowPage = 'autumn'
+            //             }
+            //         } else if (nowPage < 5) {
+            //             if (scrollOut < winter) {
+            //                 window.scrollTo({ 'top': autumn });
+            //                 // nowPage = 'autumn'
+            //             } else if (scrollOut > winter) {
+            //                 window.scrollTo({ 'top': fruit });
+            //                 // nowPage = 'fruit'
+            //             } else {
+            //                 window.scrollTo({ 'top': winter });
+            //                 // nowPage = 'winter'
+            //             }
+            //         }
 
-                })
+            //     })
 
-            }
+            // }
 
             setMenu();
-            move();
+            indexEff();
+
             // 看螢幕大小有沒有變化
             $(window).resize(function () {
                 if (window.outerWidth != winwidth) {
@@ -234,25 +243,7 @@
     <div class="space"></div>
 
     <main>
-        <div class="album" id="fruit">
-            <!-- fruit.html  -->
-        </div>
 
-        <div class="album" id="spring">
-            <!-- spring.html  -->
-        </div>
-
-        <div class="album" id="summer">
-            <!-- summer.html  -->
-        </div>
-
-        <div class="album" id="autumn">
-            <!-- autumn.html  -->
-        </div>
-
-        <div class="album" id="winter">
-            <!-- winter.html  -->
-        </div>
     </main>
 
     <div class="space"></div>
