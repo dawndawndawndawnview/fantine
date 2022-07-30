@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Magra&display=swap');
+
+body {
+    font-family: 'Magra', "Noto Sans TC", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Forum', cursive;
+    font-style: normal;
+}
