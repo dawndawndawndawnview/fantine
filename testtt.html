@@ -1,160 +1,66 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!-- --------meta  -->
-    <meta name="author" content="   fantine芳亭牙膏">
-    <meta name="Keywords" content="牙膏，果香，水果，幸福感，口腔">
-    <meta name="Description" content="文案">
-    <meta name="copyright" content="Copyright 2022,     fantine芳亭牙膏">
-    <meta name="Subject" content="  fantine芳亭牙膏">
-    <meta name="Abstract" content=" fantine芳亭牙膏">
-    <meta name="Designer" content=" fantine芳亭牙膏">
-    <meta name="Publisher" content="    fantine芳亭牙膏">
-
-    <!-- ------og -->
-    <meta property="og:title" content=" fantine芳亭牙膏">
-
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content=" fantine芳亭牙膏">
-    <meta property="og:description" content="文案">
-    <meta property="og:url" content="#">
-    <meta property="og:image" content="images/logo/fantine-logo-icon2.png">
-
-    <link rel="icon" href="images/logo/fantine-logo-icon2.png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/logo/fantine-logo-icon2.png" type="image/x-icon">
-    <link rel="bookmark" href="images/logo/fantine-logo-icon2.png" type="image/x-icon">
-    <title>芳亭-首頁</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        #a {
-            position: absolute;
-            width: 250px;
-
-            top: 73px;
-            left: -10px;
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'),
+            $section = $('section');
+        var numOfPages = $section.length - 1, // 取得section
+            curPage = 0, //起始頁
+            scrollLock = false; //滾動開關
+        function scrollPage() {
+            //滑鼠滾動
+            $(document).on("mousewheel DOMMouseScroll", function (e) {
+                if (scrollLock) return;
+                if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0)
+                    navigateUp();
+                else
+                    navigateDown();
+            });
+            //鍵盤上下鍵
+            $(document).on("keydown", function (e) {
+                if (scrollLock) return;
+                if (e.which === 38)
+                    navigateUp();
+                else if (e.which === 40)
+                    navigateDown();
+            });
         }
 
-        #b {
-            position: absolute;
-            width: 350px;
+        // 上滾動
+        function navigateUp() {
+            if (curPage === 0) return;
+            curPage--;
+            pagination();
+        };
+        // 下滾動
+        function navigateDown() {
+            if (curPage === numOfPages) return;
+            curPage++;
+            pagination();
+        };
+        // 滾動至上/下區塊
+        function pagination() {
+            scrollLock = true;
+            $body.stop().animate({
+                scrollTop: $section.eq(curPage).offset().top
+            }, 1000, 'swing', function () {
+                scrollLock = false;
+            });
+        };
 
-            top: -10px;
-            left: 770px;
-
-        }
-
-        #c {
-            position: absolute;
-            width: 300px;
-
-            top: 0;
-            right: -20px;
-
-
-        }
-
-        #d {
-            position: absolute;
-            width: 250px;
-
-            bottom: 115px;
-            left: 581px;
-
-        }
-
-        #e {
-            position: absolute;
-            height: 300px;
-
-            bottom: 220px;
-            left: -20px;
-        }
-
-        #f {
-            position: absolute;
-            height: 500px;
-
-            bottom: 75px;
-            right: 50px;
-
-        }
-    </style>
-
+        $(function () {
+            scrollPage();
+        });
+    </script>
 </head>
 
 <body>
-    <!-- <div class="container"> -->
-    <header>
-        <div class="logo"><a href="index.html"></a></div>
-        <div class="navbar">
-            <div class="large">
-                <ul>
-                    <li class="product"><a href="#">product</a>
-                        <ul>
-                            <li class="season"><a href="#">season</a></li>
-                            <li class="box"><a href="#">box</a></li>
-                        </ul>
-                    </li>
-                    <li class="about"><a href="#">about</a></li>
-                    <li class="contact"><a href="#">contact</a></li>
-                </ul>
-            </div>
 
-            <div class="small">
-                <ul>
-                    <li class="s-product"><a href="#">product</a></li>
-                    <li class="s-season"><a href="#">season</a></li>
-                    <li class="s-box"><a href="#">box</a></li>
-                    <li>
-                        <div class="s-border"></div>
-                    </li>
-                    <li class="s-about"><a href="#">about</a></li>
-                    <li class="s-contact"><a href="#">contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="space"></div>
-        <div class="right">
-            <ul>
-                <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
-            </ul>
-        </div>
-        <a href="javascript:;" class="hamburger ">
-            <div></div>
-            <div></div>
-            <div></div>
-        </a>
-    </header>
-    <!-- </div> -->
-
-    <div class="main">
-        <!-- <nav>
-            <div class="spring"><a href="index-spring.html">spring</a></div>
-            <div class="summer"><a href="index-summer.html">summer</a></div>
-            <div class="autumn"><a href="index-autumn.html">autumn</a></div>
-            <div class="winter"><a href="index-winter.html">winter</a></div>
-        </nav> -->
-        <div class="album">
-
-            <div> <a class="title-container" href="index-spring.html"></a></div>
-            <div> <img id="a" src="images/pic/pic1.svg" alt=""> </div>
-            <div> <img id="b" src="images/pic/pic2.svg" alt=""> </div>
-            <div> <img id="c" src="images/pic/pic3.svg" alt=""> </div>
-            <div> <img id="d" src="images/pic/pic4.svg" alt=""> </div>
-            <div> <img id="e" src="images/pic/pic5.svg" alt=""> </div>
-            <div> <img id="f" src="images/pic/pic6.svg" alt=""> </div>
-        </div>
-    </div>
-
-    <!-- <img class="title-container" src="images/logo2.png" alt=""> -->
 </body>
 
 </html>
