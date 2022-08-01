@@ -37,11 +37,38 @@ main {
     }
 }
 
-.aboutBlock {
+.block {
     flex: 1;
     // background-color: $fWhite;
     background-color: $autumn;
-    // border: 1px dashed $summer;
+    border: 1px dashed $summer;
     height: 100vh;
-    
+
+    .title {
+        font-size: 50px;
+        margin: 10% 0 0 3%;
+    }
+
+    .line {
+        border: 1px solid black;
+        margin: 25px 20px;
+    }
+
+    .contact {
+        margin: 20px 3%;
+
+        .titleS {
+            font-size: 30px;
+            margin: 20px 0;
+        }
+
+        .story {
+            position: relative;
+
+
+        }
+    }
+
+
+
 }

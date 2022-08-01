@@ -8,26 +8,42 @@ main {
   height: 100vh;
   position: relative;
 }
-
 #left img {
   display: block;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
 }
-
 #left img:nth-of-type(1) {
   width: 50%;
   top: 20%;
 }
-
 #left img:nth-of-type(2) {
   width: 50%;
   bottom: 10%;
 }
 
-.aboutBlock {
+.block {
   flex: 1;
   background-color: #DA923E;
+  border: 1px dashed #91AC48;
   height: 100vh;
+}
+.block .title {
+  font-size: 50px;
+  margin: 10% 0 0 3%;
+}
+.block .line {
+  border: 1px solid black;
+  margin: 25px 20px;
+}
+.block .contact {
+  margin: 20px 3%;
+}
+.block .contact .titleS {
+  font-size: 30px;
+  margin: 20px 0;
+}
+.block .contact .story {
+  position: relative;
 }
