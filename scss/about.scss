@@ -4,6 +4,8 @@ $summer : #91AC48;
 $autumn : #DA923E;
 $winter : #B081B7;
 
+$title : 4vw;
+
 main {
     display: flex;
     font-family: 'Noto Sans TC', sans-serif;
@@ -37,36 +39,45 @@ main {
     }
 }
 
-.block {
+.rightContact {
     flex: 1;
-    // background-color: $fWhite;
-    background-color: $autumn;
-    border: 1px dashed $summer;
+    background-color: $fWhite;
+    // background-color: $autumn;
     height: 100vh;
 
     .title {
-        font-size: 50px;
+        font-size: $title;
         margin: 10% 0 0 3%;
+        border: 1px dashed $summer;
     }
 
     .line {
-        border: 1px solid black;
-        margin: 25px 20px;
+        border-top: 1px solid black;
+        margin: 25px 20px 0 20px;
     }
 
-    .contact {
+    .contactBlock {
         margin: 20px 3%;
+        border: 1px dashed $winter;
 
-        .titleS {
-            font-size: 30px;
-            margin: 20px 0;
+        .contact {
+            display: flex;
+            border: 1px dashed $summer;
+            justify-content: space-between;
+            .titleS {
+                position: static;
+                font-size: $title / 2;
+                margin: 10px 0;
+                border: 1px dashed $spring;
+            }
+
+            .story {
+                display: flex;
+                flex-direction: column;
+                border: 1px dashed $autumn;
+            }
         }
 
-        .story {
-            position: relative;
-
-
-        }
     }
 
 

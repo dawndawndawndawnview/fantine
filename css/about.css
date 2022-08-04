@@ -23,27 +23,37 @@ main {
   bottom: 10%;
 }
 
-.block {
+.rightContact {
   flex: 1;
-  background-color: #DA923E;
-  border: 1px dashed #91AC48;
+  background-color: #FFFEF7;
   height: 100vh;
 }
-.block .title {
-  font-size: 50px;
+.rightContact .title {
+  font-size: 4vw;
   margin: 10% 0 0 3%;
+  border: 1px dashed #91AC48;
 }
-.block .line {
-  border: 1px solid black;
-  margin: 25px 20px;
+.rightContact .line {
+  border-top: 1px solid black;
+  margin: 25px 20px 0 20px;
 }
-.block .contact {
+.rightContact .contactBlock {
   margin: 20px 3%;
+  border: 1px dashed #B081B7;
 }
-.block .contact .titleS {
-  font-size: 30px;
-  margin: 20px 0;
+.rightContact .contactBlock .contact {
+  display: flex;
+  border: 1px dashed #91AC48;
+  justify-content: space-between;
 }
-.block .contact .story {
-  position: relative;
+.rightContact .contactBlock .contact .titleS {
+  position: static;
+  font-size: 2vw;
+  margin: 10px 0;
+  border: 1px dashed #E88FA0;
+}
+.rightContact .contactBlock .contact .story {
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed #DA923E;
 }
